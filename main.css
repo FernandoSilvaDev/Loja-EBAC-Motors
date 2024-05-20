@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    overflow-x: hidden;              /*Todo conteudo que ultrapassar o tamanho horinzontal da tela não sera visivél*/
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    position: sticky;       /* Sticky - Esse valor faz o elemento acompanhar a rolagem da pagina */
+    top: 0;
+    left: 0;
+    z-index: 1;            /* Esta propriedade faz com que o elemento seja prioritária quando aver uma sobreposição, (como a class Carousel usa uma position relative isso causa concorrência) */
+}
+
+header, footer {
+    background-color: #192a56;
+    padding-top: 16px;
+    color: #fff;
+}
+
+body {
+    background-color: #7c7c7c;
+}
+
+header > .container,
+footer > .container {
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+}
+
+nav {
+    background-color: #575fcf;
+    padding: 16px 0;
+    display: none;
+}
+
+nav li{
+    list-style: none;
+    display: inline;
+    margin-right: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-hamburguer {
+    width: 32px;
+    cursor: pointer;
+}
+
+.menu-hamburguer span {
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.container-flex {
+    display: flex;
+}
+
+#sobre-a-loja img{
+    max-width: 400px;
+    margin-right: 24px;
+}
+
+section {
+    padding: 48px 0;
+}
+
+section h2 {
+    margin-bottom: 16px;
+}
+
+.lista-veiculos {
+    display: grid;
+    grid-template-columns: repeat(4, 24.25%); /*Neste caso, para o espaço dentro do container de 100% a conta seria 100-2= 98/3= 32,6%*/
+              /*numero de artigos ↑    ↑ porcentagem de ocupação das 3 colunas*/
+    column-gap: 1%;  /*Para o espaçamento nas colunas*/
+    row-gap: 5%;
+}
+
+.lista-veiculos li {
+    list-style: none;
+    max-width: 100%;
+    margin-bottom: 24px;
+}
+
+.lista-veiculos li img {
+    max-width: 100%;
+}
+
+.lista-veiculos h3 {
+    margin: 16px 0;
+}
+
+
+button {
+    display: block;
+    width: 100%;
+    padding:  8px 0;
+    border: none;
+    background-color: rgb(87, 177, 87);
+    color: #fff;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.price {       /*Preço dos veiculos*/
+    margin: 16px 0;
+    display: block;
+}
+
+.price del {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.form-campo {
+    margin-bottom: 16px;
+}
+
+.form-campo label {
+    font-weight: bold;
+    display: block;        /*Para cada elemento ficar em uma linha*/
+}
+
+.form-campo input,
+.form-campo textarea {
+    width: 100%;
+    display: block;
+    padding: 8px;
+}
+
+.form-campo textarea {
+    resize: none;          /* Resize é para que a textarea não tenha alterações do campo pelo usuário*/
+    height: 120px;
+}
+
+form {
+    max-width: 360px;    /*Para limitar o tamanho do formulário */
+}
+
+form button {
+    max-width: 120px;
+}
+
+footer li {
+    list-style: none;
+    margin-left: 16px;
+}
+
+footer li img {
+    height: 32px;
+}
+/* ____________________________________________Tela celular___________________________________________________________________________ */
+@media screen and (max-width: 640px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .container-flex {
+        display: block;
+    }
+
+    section {
+        padding: 16px 0;
+    }
+
+    #sobre-a-loja img{
+        max-width: 100%;
+        margin-right: 0px;
+    }
+
+    .container .container-flex {
+        display: block;
+    }
+
+    .lista-veiculos li {
+        list-style: none;
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+    
+
+    .destaque .lista-veiculos {
+        display: block;
+        font-size: 1.5em;
+    }
+
+    .destaque .lista-veiculos img {
+        margin-right: 0px;
+    }
+
+    nav li{
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .form-campo input,
+    .form-campo textarea {
+        width: 90%;
+    }
+
+    .item-central {
+        margin: 0 0%;
+    }
+
+    footer li {
+        display: inline;
+        padding-right: 55px;
+        align-items: center;
+    }
+
+    footer p {
+        padding-bottom: 16px;
+        font-size: 14px;
+    }
+
+    .menu-hamburguer {
+        padding-top: 10px;
+    }
+
+    footer, header .container-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+
+}
+/* ____________________________________________________Tela Ipad___________________________________________________________________ */
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .container-flex {
+        display: block;
+    }
+
+    #sobre-a-loja img{
+        max-width: 100%;
+        margin-right: 0px;
+        margin-bottom: 8px;
+        margin-left: 35px;
+    }
+
+    .lista-veiculos {
+        display: grid;
+        grid-template-columns: repeat(2, 49.5%); /*Neste caso, para o espaço dentro do container de 100% a conta seria 100-2= 98/3= 32,6%*/
+                  /*numero de artigos ↑    ↑ porcentagem de ocupação das 3 colunas*/
+        column-gap: 1%;  /*Para o espaçamento nas colunas*/
+        row-gap: 5%;
+    }
+
+    footer p {
+        padding: 0px 0px 16px 130px;
+        font-size: 22px;
+    }
+
+    footer, header .container-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    footer li {
+        display: inline;
+        padding: 0px 0px 0px 145px;
+    }
+    
+}
